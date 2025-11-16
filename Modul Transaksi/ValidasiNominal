@@ -1,0 +1,11 @@
+//Fungsi ValidasiNominal
+/*	Memeriksa keabsahan nominal transaksi
+	Input	: Data nominal transaksi dari user
+	Output	: True  -> valid
+              False -> tidak valid
+*/
+
+bool ValidasiNominal (int nominal)
+{ 
+	return nominal>0;
+} 

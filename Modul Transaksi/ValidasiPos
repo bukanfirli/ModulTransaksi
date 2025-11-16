@@ -1,0 +1,18 @@
+//Fungsi ValidasiPos
+/*	Memeriksa keabsahan jenis pos anggaran
+	Input	: Data jenis pos anggaran dari user
+	Output	: True  -> valid
+              False -> tidak valid
+*/
+
+bool ValidasiPos (PosAnggaran daftarPos[], int JumlahPos, char namapos[])
+{
+	for (int i = 0; i < JumlahPos; i++)
+    {
+        if (strcasecmp(namapos, pos[i].NamaAnggaran) == 0)
+        {
+            return true;
+        }
+    }
+    return false;
+} 

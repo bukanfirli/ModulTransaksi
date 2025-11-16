@@ -1,0 +1,11 @@
+//Fungsi ValidasiTanggal
+/*	Memeriksa keabsahan data tanggal
+	Input	: Data tanggal dari user
+	Output	: True  -> valid
+              False -> tidak valid
+*/
+
+bool ValidasiTanggal (char tanggal[])
+{
+	return strlen(tanggal)>0;
+}

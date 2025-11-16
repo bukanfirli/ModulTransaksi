@@ -1,0 +1,13 @@
+//Fungsi ValidasiJenis
+/*	Memeriksa keabsahan data jenis transaksi
+	Input	: Data jenis transaksi dari user
+	Output	: True  -> valid
+              False -> tidak valid
+*/
+
+bool ValidasiJenis (char jenis[])
+{
+	return (strcasecmp(jenis, "Pemasukan") == 0 ||
+            strcasecmp(jenis, "Pengeluaran") == 0);
+}
+ 

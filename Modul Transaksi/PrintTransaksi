@@ -1,0 +1,27 @@
+/*	Prosedur PrintTransaksi
+	I.S.	: Data transaksi dari user belum tersimpan di file eksternal
+	F.S.	: Data transaksi dari user sudah tersimpan di file eksternal
+*/
+
+void PrintTransaksi (Transaksi t[], int JumlahTransaksi)
+{
+    FILE *file = fopen("DataTransaksi.txt", "a");
+
+    if (file == NULL) {
+        printf("Gagal membuka file\n");
+        return;
+    }
+
+    for (int i = 0; i < JumlahTransaksi; i++)
+    {
+        fprintf(file, "%s | %s | %s | %s | %d | %s\n",
+                t[i].id,
+                t[i].tanggal,
+                t[i].jenis,
+                t[i].namapos,
+                t[i].nominal,
+                t[i].deskripsi);
+    }
+
+    fclose(file);
+}

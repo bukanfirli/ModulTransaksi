@@ -1,0 +1,26 @@
+/*	Prosedur ShowTransaksi
+	I.S.	: Data transaksi dari user tersimpat di array record Transaksi
+	F.S.	: Data transaksi dari user muncul di layar
+*/
+
+void ShowTransaksi(Transaksi t[], int JumlahTransaksi)
+{
+    printf("_____________________________________________________________________________________________\n");
+    printf("| %-6s | %-12s | %-12s | %-12s | %-12s | %-20s |\n",
+           "ID", "Tanggal", "Jenis", "Pos", "Nominal", "Deskripsi");
+    printf("|________|______________|______________|______________|______________|______________________|\n");
+
+    for (int i = 0; i < JumlahTransaksi; i++)
+    {
+        printf("| %-6s | %-12s | %-12s | %-12s | %-12d | %-20s |\n",
+               t[i].id,
+               t[i].tanggal,
+               t[i].jenis,
+               t[i].namapos,
+               t[i].nominal,
+               t[i].deskripsi);
+    }
+
+    printf("|________|______________|______________|______________|______________|______________________|\n");
+
+} 
