@@ -63,19 +63,19 @@ int JumlahTransPengeluaran(Transaksi transaksi[], int jumlahTransaksi)
     }
 }
 
-//Fungsi JumlahTransKeseluruhan
+//Fungsi HitungTransaksi
 /*	Menghitung jumlah transaksi baik yang tersimpan dalam file dan yang akan ditambahkan user
 	Input	: Data yang tersimpan di dalam array transaksi
 	Output	: Jumlah array transaksi yang terisi
 */
 
-int JumlahTransKeseluruhan(Transaksi transaksi[])
+int HitungTransaksi(Transaksi transaksi[])
 {
     int jumlah = 0;
 
     for (int i = 0; i < 100; i++)
     {
-        if (strlen(transaksi[i]) > 0)
+        if (strlen(transaksi[i].jenis) > 0)
         {
             jumlah++;
         }

@@ -47,7 +47,7 @@ int main(){
         {"T005","2024-01-20","Bonus",1000000,"Bonus Proyek","Pemasukan"}
     };
 
-    int jumlahTransaksi = 5;
+    int jumlahTransaksi = sizeof(transaksi) / sizeof(transaksi[0]);
     MenuLaporanKeuangan(transaksi, jumlahTransaksi);
 
     return 0;
