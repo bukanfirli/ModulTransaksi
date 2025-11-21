@@ -1,0 +1,84 @@
+/*	Prosedur ShowRekapitulasi
+	I.S.	: Data transaksi dari user tersimpat di array record Transaksi
+	F.S.	: Data transaksi dari user muncul di layar
+*/
+
+void ShowRekapitulasi(Transaksi transaksi[], int jumlahTransaksi)
+{
+    int jumlahKeluar = JumlahTransPemasukan(transaksi, jumlahTransaksi);
+    int jumlahMasuk = JumlahTransPengeluaran(transaksi, jumlahTransaksi);
+    int totalMasuk = TotalPemasukan(transaksi, jumlahTransaksi);
+    int totalKeluar = TotalPengeluaran(transaksi, jumlahTransaksi);
+    int saldoAkhir = Saldo(transaksi, jumlahTransaksi);
+    int rataKeluar = RataRata(transaksi, jumlahTransaksi);
+
+    printf("______________________________________________________________\n");
+    printf("| %-20s  | %-17s | %-15s |\n", "Jenis", "Jumlah Transaksi", "Total (Rp)");
+    printf("|_______________________|___________________|_________________|\n");
+    printf("| %-20s  | %-17d | %-15d |\n", "Pemasukan", jumlahMasuk, totalMasuk);
+    printf("|_______________________|___________________|_________________|\n");
+    printf("| %-20s  | %-17d | %-15d |\n", "Pengeluaran", jumlahKeluar, totalKeluar);
+    printf("|_______________________|___________________|_________________|\n");
+    printf("| %-20s  | %-17s | %-15d |\n", "Saldo Akhir", "-", saldoAkhir);
+    printf("|_______________________|___________________|_________________|\n");
+    printf("| %-20s | %-17s | %-15d |\n", "Rata-rata Pengeluaran", "-", rataKeluar);
+    printf("|_______________________|___________________|_________________|\n");
+}
+
+//Fungsi JumlahTransPemasukan
+/*	Menghitung jumlah transaksi berjenis pemasukan
+	Input	: Data jumlah transaksi dari user
+	Output	: Jumlah transaksi yang berjenis pemasukan saja
+*/
+
+int JumlahTransPemasukan(Transaksi transaksi[], int jumlahTransaksi)
+{
+    int hitung = 0;
+    for (int i = 0; i < jumlahTransaksi; i++)
+    {
+        if (strcasecmp(transaksi[i].jenis, "Pemasukan") == 0)
+        {
+            hitung++;
+        }
+        return hitung;
+    }
+}
+
+//Fungsi JumlahTransPengeluaran
+/*	Menghitung jumlah transaksi berjenis pengeluaran
+	Input	: Data jumlah transaksi dari user
+	Output	: Jumlah transaksi yang berjenis pengeluaran saja
+*/
+
+int JumlahTransPengeluaran(Transaksi transaksi[], int jumlahTransaksi)
+{
+    int hitung = 0;
+    for (int i = 0; i < jumlahTransaksi; i++)
+    {
+        if (strcasecmp(transaksi[i].jenis, "Pengeluaran") == 0)
+        {
+            hitung++;
+        }
+        return hitung;
+    }
+}
+
+//Fungsi JumlahTransKeseluruhan
+/*	Menghitung jumlah transaksi baik yang tersimpan dalam file dan yang akan ditambahkan user
+	Input	: Data yang tersimpan di dalam array transaksi
+	Output	: Jumlah array transaksi yang terisi
+*/
+
+int JumlahTransKeseluruhan(Transaksi transaksi[])
+{
+    int jumlah = 0;
+
+    for (int i = 0; i < 100; i++)
+    {
+        if (strlen(transaksi[i]) > 0)
+        {
+            jumlah++;
+        }
+    }
+    return jumlah;
+}
